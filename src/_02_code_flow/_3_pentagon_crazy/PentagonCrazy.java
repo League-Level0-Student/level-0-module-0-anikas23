@@ -5,50 +5,56 @@ package _02_code_flow._3_pentagon_crazy;
  */
 
 import org.jointheleague.graphical.robot.Robot;
+
 import java.awt.Color;
 
 public class PentagonCrazy {
-	
-	public static void main(String[] args) {
-		
-		//  Create a new Robot
 
-		//  Put the robot's pen down
+    public static void main(String[] args) {
 
-		//  SPEED. Make the robot go at maximum speed (100)
+        //  Create a new Robot
+        Robot rob = new Robot();
+        //  Put the robot's pen down
+        rob.penDown();
+        //  SPEED. Make the robot go at maximum speed (100)
+        rob.setSpeed(100);
+        //  COLOR. Set the pen to a color that you like for the shape
+        rob.setPenColor(Color.RED);
+        //  NUMBER OF SIDES. Make an int variable for the number of sides the shape will have.
+        //  				(Hint: its called PentagonCrazy)
+        int side = 5;
+        //  TURN ANGLE. Make another int variable for the angle the robot must turn.
+        //  			Hint: Divide 360 by the number of sides the shape has to get the angle.
+        int turn = 360 / 5;
+        //  COUNT. Make another int variable to count how many times the loop has repeated
+        //         Set its start value to zero.
+        int count = 0;
+        //  LOOP. Start a while loop to repeat the DRAW, TURN, and INCREASE COUNT code 200 times.
+        while (count < 200) {
+            rob.setRandomPenColor();
+            rob.move(count);
+            rob.turn(turn + 1);
+            count += 1;
+        }
+        rob.hide();
+        //  DRAW.  Make the robot move the amount in your count variable
 
-		//  COLOR. Set the pen to a color that you like for the shape
+        //  TURN.  Turn the robot the amount in your angle variable + 1
 
-		//  NUMBER OF SIDES. Make an int variable for the number of sides the shape will have.
-		//  				(Hint: its called PentagonCrazy)
+        //  INCREASE COUNT. Increase the count by 1
 
-		//  TURN ANGLE. Make another int variable for the angle the robot must turn. 
-		//  			Hint: Divide 360 by the number of sides the shape has to get the angle.
-		
-		//  COUNT. Make another int variable to count how many times the loop has repeated
-		//         Set its start value to zero.
+        //  End the while loop here
 
-		//  LOOP. Start a while loop to repeat the DRAW, TURN, and INCREASE COUNT code 200 times. 
-		
-				//  DRAW.  Make the robot move the amount in your count variable
-		
-				//  TURN.  Turn the robot the amount in your angle variable + 1
+        //  Now hide the robot so you can see the pattern it has drawn.
 
-				//  INCREASE COUNT. Increase the count by 1
-		
-		//  End the while loop here
+        //  Run the program.
+        //  Check the pattern against the picture in the recipe. If it matches, you are done!
 
-		//  Now hide the robot so you can see the pattern it has drawn.
-		
-		//  Run the program. 
-		//  Check the pattern against the picture in the recipe. If it matches, you are done!
-	
 
-	
-	// Variations:
-	// *12. make the pattern really huge
-	// *13. randomize the color of the pattern 
-	// *14. experiment with different shapes
+        // Variations:
+        // *12. make the pattern really huge
+        // *13. randomize the color of the pattern
+        // *14. experiment with different shapes
 
-	}
+    }
 }
